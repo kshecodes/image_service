@@ -1,3 +1,6 @@
+import json
+import os
+import boto3
 
 from .utils import table
 
@@ -11,7 +14,7 @@ def mark_available(event, context):
         if not key:
             continue
         try:
-
+            # image_id is last segment
             image_id = key.split("/")[-1]
             ddb_table.update_item(
                 Key={"image_id": image_id},

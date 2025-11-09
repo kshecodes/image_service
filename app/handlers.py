@@ -1,5 +1,6 @@
 import json
 from typing import Any, Dict, List
+import boto3
 from boto3.dynamodb.conditions import Key
 
 from .models import CreateImageRequest, now_iso
